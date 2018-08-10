@@ -40,9 +40,11 @@ class HomeController < ApplicationController
 
   def details
 
-    @movie_id = params[:movie]
+    @movie_id = params[:"foo"]
 
-    movie_id = "299536"
+
+
+    movie_id = "0"
     base_url = "https://api.themoviedb.org/3/movie/"
     api_key = "?api_key=d87c00b6a00ae74e930c063e106d6b4d"
     lang = "&language=en-US"
