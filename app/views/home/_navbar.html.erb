@@ -18,12 +18,19 @@
         <li><%= link_to "Upcoming", home_upcoming_path %></li>
         <li><%= link_to "Now Showing", home_now_showing_path %></li>
         <li><%= link_to "Top Rated", home_top_rated_path %></li>
-        <li><%= link_to "Details", home_details_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Details", home_details_path %></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", home_about_path %></li>
-        <li><a href="#">Register</a></li>
-        <li><a href="#">Login</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Profile", edit_user_registration_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Register", new_user_registration_path %></li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
