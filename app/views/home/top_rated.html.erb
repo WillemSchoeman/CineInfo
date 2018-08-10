@@ -1,0 +1,10 @@
+
+<h1>Top Rated</h1>
+
+<br/><br/>
+
+<% for x in @top_rated["results"] %>
+<%= x["title"] %><br/>
+<%= x["release_date"] %><br/>
+<%= x["vote_average"] %><br/><br/>
+<% end %>

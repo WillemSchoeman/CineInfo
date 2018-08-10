@@ -1,0 +1,22 @@
+
+<h1>Popular Movies</h1>
+
+<br/><br/>
+
+<% for x in @popular["results"] %>
+
+
+
+        <div class="panel">
+
+          <li><% link_to home_details_path %>
+
+            <%= x["title"] %><br/>
+            <%= x["release_date"] %><br/>
+            <%= x["vote_average"] %><br/>
+
+          </li><br/>
+        </div>
+
+
+<% end %>
