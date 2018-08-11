@@ -39,22 +39,34 @@ class HomeController < ApplicationController
   end
 
   def details
-
-    @movie_id = params[:"foo"]
-
-
-
-    movie_id = "0"
-    base_url = "https://api.themoviedb.org/3/movie/"
-    api_key = "?api_key=d87c00b6a00ae74e930c063e106d6b4d"
-    lang = "&language=en-US"
-    site = base_url + movie_id + api_key + lang
-    @url = site
-    @uri = URI(@url)
-    @response = Net::HTTP.get(@uri)
-    @details = JSON.parse(@response)
   end
-
+  
   def about
   end
 end
+
+class Details
+    
+    
+
+    attr_accessor :movie_id
+
+    def initialize(movie_id)
+        @movie_id = movie_id
+    end
+
+    def movie
+        @base_url = "https://api.themoviedb.org/3/movie/"
+        @api_key = "?api_key=d87c00b6a00ae74e930c063e106d6b4d"
+        @lang = "&language=en-US" 
+        @url = @base_url + @movie_id + @api_key + @lang
+        require 'net/http'
+        require 'json'
+        @uri = URI(@url)
+        @response = Net::HTTP.get(@uri)
+        @details = JSON.parse(@response)
+        return @details
+    end
+end  
+
+
