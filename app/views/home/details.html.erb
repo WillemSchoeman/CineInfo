@@ -6,5 +6,9 @@
 
 <%= Details.new(@movie_id).movie %>
 
+<br/><br/>
 
-
+<%= Details.new(@movie_id).movie["title"] %><br/>
+<%= Details.new(@movie_id).movie["vote_average"] %><br/>
+<%= Details.new(@movie_id).movie["release_date"] %><br/>
+<%= Details.new(@movie_id).movie["overview"] %><br/>

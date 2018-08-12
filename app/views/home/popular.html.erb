@@ -4,22 +4,12 @@
 <br/><br/>
 
 <% for x in @popular["results"] %>
-
-
-
-        <div class="panel">
-
-
-            <% id = x["id"] %>
-            <%= link_to x["title"], home_details_path(id) %><br/>
-            <%= x["id"] %><br/>
-            <%= x["release_date"] %><br/>
-            <%= x["vote_average"] %><br/>
-
-          <br/>
-
-        </div>
-
-
+    
+    <div class="panel" >
+        <% @id = x["id"] %>
+        <%= link_to x["title"], home_details_path(@id) %><br/>
+        <%= x["release_date"] %><br/>
+        <%= x["vote_average"] %>
+    </div>
 
 <% end %>
