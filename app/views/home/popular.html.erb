@@ -10,8 +10,9 @@
         <div class="panel">
 
 
-
-            <%= x["title"] %><br/>
+            <% id = x["id"] %>
+            <%= link_to x["title"], home_details_path(id) %><br/>
+            <%= x["id"] %><br/>
             <%= x["release_date"] %><br/>
             <%= x["vote_average"] %><br/>
 
@@ -19,8 +20,6 @@
 
         </div>
 
-        
+
 
 <% end %>
-
-

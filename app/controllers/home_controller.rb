@@ -37,28 +37,28 @@ class HomeController < ApplicationController
     @response = Net::HTTP.get(@uri)
     @upcoming = JSON.parse(@response)
   end
-
-  def details
-  end
   
+  def details
+  end 
+  
+    
+    
   def about
   end
 end
 
-class Details
-    
-    
+class Details    
+  
+    attr_accessor :id
 
-    attr_accessor :movie_id
-
-    def initialize(movie_id)
-        @movie_id = movie_id
+    def initialize(id)
+        @movie_id = id
     end
 
     def movie
         @base_url = "https://api.themoviedb.org/3/movie/"
         @api_key = "?api_key=d87c00b6a00ae74e930c063e106d6b4d"
-        @lang = "&language=en-US" 
+        @lang = "&language=en-US"
         @url = @base_url + @movie_id + @api_key + @lang
         require 'net/http'
         require 'json'
@@ -67,6 +67,6 @@ class Details
         @details = JSON.parse(@response)
         return @details
     end
-end  
+  end
 
 

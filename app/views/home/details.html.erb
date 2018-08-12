@@ -1,9 +1,10 @@
 <h1>Movie Details</h1>
 
+<br/><br/>
 
+<% @movie_id = params["format"] %>
 
-<% my_movie = Details.new("106") %>
+<%= Details.new(@movie_id).movie %>
 
-<%= my_movie.movie %>
 
 
