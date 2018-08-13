@@ -4,7 +4,10 @@
 <br/><br/>
 
 <% for x in @now_showing["results"] %>
-<%= x["title"] %><br/>
-<%= x["release_date"] %><br/>
-<%= x["vote_average"] %><br/><br/>
+
+    <% @id = x["id"] %>
+    <%= link_to x["title"], home_details_path(@id) %><br/>
+    <%= x["release_date"] %><br/>
+    <%= x["vote_average"] %><br/><br/>
+
 <% end %>
