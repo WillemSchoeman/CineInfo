@@ -1,0 +1,16 @@
+<h1>Airting Today</h1>
+
+
+<% @tv_today %>
+
+
+<% for x in @tv_today["results"] %>
+    
+    <div class="panel" >
+        <% @id = x["id"] %>
+        <%= link_to x["name"], home_tv_details_path(@id) %><br/>
+        <%= x["first_air_date"] %><br/>
+        <%= x["vote_average"] %>
+    </div>
+
+<% end %>

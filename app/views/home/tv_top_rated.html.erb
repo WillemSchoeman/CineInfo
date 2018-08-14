@@ -1,0 +1,15 @@
+<h1>Top Rated TV</h1> 
+
+
+<% @tv_top_rated %>
+
+<% for x in @tv_top_rated["results"] %>
+    
+    <div class="panel" >
+        <% @id = x["id"] %>
+        <%= link_to x["name"], home_tv_details_path(@id) %><br/>
+        <%= x["first_air_date"] %><br/>
+        <%= x["vote_average"] %>
+    </div>
+
+<% end %>

@@ -1,0 +1,17 @@
+<h1>Series Details</h1>
+
+<br/><br/>
+
+<% @tv_id = params["format"] %>
+
+<% Details_TV.new(@tv_id).series %>
+
+<br/><br/>
+
+<%= Details_TV.new(@tv_id).series["name"] %><br/>
+<%= Details_TV.new(@tv_id).series["vote_average"] %><br/>
+<%= Details_TV.new(@tv_id).series["first_air_date"] %><br/><br/>
+<%= Details_TV.new(@tv_id).series["overview"] %><br/>
+
+
+<% Details_TV.new(@tv_id).series["last_episode_to_air"]["name"] %><br/>

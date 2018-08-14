@@ -1,0 +1,32 @@
+ <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Search Movies</h3>
+  </div>
+  <form class="form-inline">
+    <div class="panel-body">
+        <div class="form-group">
+            <%= form_tag home_search_path, :method => 'POST' do %>
+                <%= text_field_tag 'sym', nil, placeholder: 'Enter Movie Name', size: 50, class: "form-control" %>
+                <%= submit_tag 'Search', class:"btn btn-info" %>
+            <% end %>
+            <br/><br>
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div>
+  </form>  
+</div>
+ 
+<!--<% if @movie_search %>
+    <% for x in @movie_search["results"] %>
+        <%= x["title"] %><br/>
+        <%= x["release_date"] %><br/>
+        <%= x["vote_average"] %><br/>
+        <%= x["overview"] %><br/><br/>
+    <% end %>
+<% end %>-->
