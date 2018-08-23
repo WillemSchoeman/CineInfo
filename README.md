@@ -13,3 +13,5 @@ In progress is the search function in the app.
 This is a simple preview of the site, without any fronend work. The program just prints a few of many parameters that are available with the specific API call.
 
 The screenshots will be updated as the app is developed.
+
+<img src="Screenshots/Movies_dropdown.png" width="850"> <img src="Screenshots/movies_detail.png" width="850">
